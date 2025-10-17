@@ -48,6 +48,11 @@ The modules were benchmarked on Vivado 2020.2.
 
 *Figure: Power analysis of the optimised ALU with gated operand inputs.*
 
+## Note
+
+An experiment which started as a curiosity will be expanded and integrated into a broader processor pipeline optimized for energy efficiency.
+
+
 
 ## Output Waveform
 
