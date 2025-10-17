@@ -29,14 +29,14 @@ Operation gating refers to the technique of selectively activating only the logi
 
 The following schematic illustrates the gated ALU architecture, where only the selected operation block is activated based on the opcode:
 
-![ALU Schematic](outputs/schematic_gated.png)
+![ALU Schematic](outputs/Schematic_gated.png)
 
 
 ## Power and Utilization Results
 
 The modules were benchmarked on Vivado 2020.2
 ![Power Results: ALU Baseline] (outputs/normal_power.png)
-![Power Results: ALU Optimised](assets/gated_operand_power.png)
+![Power Results: ALU Optimised](outputs/gated_operand_power.png)
 
 
 ## Output Waveform
