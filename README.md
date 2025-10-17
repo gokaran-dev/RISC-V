@@ -48,12 +48,6 @@ The modules were benchmarked on Vivado 2020.2.
 
 *Figure: Power analysis of the optimised ALU with gated operand inputs.*
 
-## Note
-
-An experiment which started as a curiosity will be expanded and integrated into a broader processor pipeline optimized for energy efficiency.
-
-
-
 ## Output Waveform
 
 The waveform below was captured post-implementation using Vivado simulation. It shows the ALU responding to various opcodes with correct results and gated evaluation:
@@ -61,3 +55,7 @@ The waveform below was captured post-implementation using Vivado simulation. It 
 ![Vivado Waveform](outputs/waveform.png)
 
 The difference observed was a one clock cycle delay between input and output.
+
+## Note
+
+An experiment which started as a curiosity will be expanded and integrated into a broader processor pipeline optimized for energy efficiency.
