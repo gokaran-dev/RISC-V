@@ -35,7 +35,9 @@ The following schematic illustrates the gated ALU architecture, where only the s
 ## Power and Utilization Results
 
 The modules were benchmarked on Vivado 2020.2
-![Power Results: ALU Baseline] (outputs/normal_power.png)
+Baseline ALU:
+![Power Results: ALU Baseline](outputs/normal_power.png)
+Optimised ALU:
 ![Power Results: ALU Optimised](outputs/gated_operand_power.png)
 
 
