@@ -34,27 +34,63 @@ The following schematic illustrates the gated ALU architecture, where only the s
 
 ## Power and Utilization Results
 
-The modules were benchmarked on Vivado 2020.2.
+The modules were benchmarked using Vivado 2020.2 across four architectural variants:
 
-**Baseline ALU**
+### 1. Baseline ALU
+- All operations are evaluated every cycle.
+- No operand isolation or clock gating.
+- Total power: 0.105 W
 
-![Power Results: ALU Baseline](outputs/normal_power.png)
-
+![Baseline ALU – Power Analysis](output/normal_power.png)
 *Figure: Power analysis of the baseline ALU design.*
 
-**Optimised ALU**
+### 2. Operand Isolation
+- Inputs to inactive operations are masked.
+- Reduces toggling in unused logic paths.
+- Total power: 0.105 W (no change in overall power, but internal signal activity reduced)
 
-![Power Results: ALU Optimised](outputs/gated_operand_power.png)
+![Operand Isolation – Power Analysis](output/gated_operand_power.png)
+*Figure: Power analysis of the ALU with operand isolation.*
 
-*Figure: Power analysis of the optimised ALU with gated operand inputs.*
+### 3. Clock Gating
+- Registers and logic are updated only when `load` is asserted.
+- Clock-related power reduced by 6%.
+- Signal and DSP power decreased.
+- IO power increased slightly, maintaining total power at 0.105 W
+
+![Clock Gating – Power Analysis](output/gated_clk_power.png)
+*Figure: Power analysis of the ALU with clock gating enabled.*
+
+### 4. Clock Gating + One-Hot Encoding
+- Opcode decoding uses one-hot representation.
+- Clock power reduced by 7% compared to clock gating alone.
+- Signal power increased by 2%.
+- IO power increased by 62%.
+- Total power increased to 0.106 W
+
+![Clock Gating + One-Hot Encoding – Power Analysis](output/gated_clk_operand_onehot_power.png)
+*Figure: Power analysis of the ALU with both clock gating and one-hot opcode encoding.*
+
+These results highlight the trade-offs between internal power savings and IO behavior. While clock gating and operand isolation reduce dynamic switching internally, encoding strategies and IO toggling can influence overall power in unexpected ways.
+
 
 ## Output Waveform
 
-The waveform below was captured post-implementation using Vivado simulation. It shows the ALU responding to various opcodes with correct results and gated evaluation:
+## Output Waveform
+
+The following waveforms were captured post-implementation using Vivado simulation.
+
+**Standard ALU Operation**
 
 ![Vivado Waveform](outputs/waveform.png)
 
-The difference observed was a one clock cycle delay between input and output.
+*Figure: ALU responding to various opcodes with correct results. A one clock cycle delay is observed between input and output.*
+
+**Clock-Gated ALU Operation**
+
+![Clock-Gated Waveform](outputs/waveform_clock_gated.png)
+
+*Figure: ALU with clock gating enabled. The internal clock only oscillates when a valid operation is triggered, reducing unnecessary switching.*
 
 ## Note
 
