@@ -41,7 +41,7 @@ The modules were benchmarked using Vivado 2020.2 across four architectural varia
 - No operand isolation or clock gating.
 - Total power: 0.105 W
 
-![Baseline ALU – Power Analysis](output/normal_power.png)
+![Baseline ALU – Power Analysis](outputs/normal_power.png)
 *Figure: Power analysis of the baseline ALU design.*
 
 ### 2. Operand Isolation
@@ -49,7 +49,7 @@ The modules were benchmarked using Vivado 2020.2 across four architectural varia
 - Reduces toggling in unused logic paths.
 - Total power: 0.105 W (no change in overall power, but internal signal activity reduced)
 
-![Operand Isolation – Power Analysis](output/gated_operand_power.png)
+![Operand Isolation – Power Analysis](outputs/gated_operand_power.png)
 *Figure: Power analysis of the ALU with operand isolation.*
 
 ### 3. Clock Gating
@@ -58,7 +58,7 @@ The modules were benchmarked using Vivado 2020.2 across four architectural varia
 - Signal and DSP power decreased.
 - IO power increased slightly, maintaining total power at 0.105 W
 
-![Clock Gating – Power Analysis](output/gated_clk_power.png)
+![Clock Gating – Power Analysis](outputs/gated_clk_power.png)
 *Figure: Power analysis of the ALU with clock gating enabled.*
 
 ### 4. Clock Gating + One-Hot Encoding
@@ -68,13 +68,11 @@ The modules were benchmarked using Vivado 2020.2 across four architectural varia
 - IO power increased by 62%.
 - Total power increased to 0.106 W
 
-![Clock Gating + One-Hot Encoding – Power Analysis](output/gated_clk_operand_onehot_power.png)
+![Clock Gating + One-Hot Encoding – Power Analysis](outputs/gated_clk_operand_onehot_power.png)
 *Figure: Power analysis of the ALU with both clock gating and one-hot opcode encoding.*
 
 These results highlight the trade-offs between internal power savings and IO behavior. While clock gating and operand isolation reduce dynamic switching internally, encoding strategies and IO toggling can influence overall power in unexpected ways.
 
-
-## Output Waveform
 
 ## Output Waveform
 
