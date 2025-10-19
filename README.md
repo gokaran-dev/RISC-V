@@ -56,7 +56,7 @@ The modules were benchmarked using Vivado 2020.2 across four architectural varia
 - Registers and logic are updated only when `load` is asserted.
 - Clock-related power reduced by 6%.
 - Signal and DSP power decreased.
-- IO power increased slightly, maintaining total power at 0.105 W
+- IO power increased, maintaining total power at 0.105 W
 
 ![Clock Gating – Power Analysis](outputs/gated_clk_power.png)
 *Figure: Power analysis of the ALU with clock gating enabled.*
@@ -65,7 +65,7 @@ The modules were benchmarked using Vivado 2020.2 across four architectural varia
 - Opcode decoding uses one-hot representation.
 - Clock power reduced by 7% compared to clock gating alone.
 - Signal power increased by 2%.
-- IO power increased by 62%.
+- IO power increased to 62%.
 - Total power increased to 0.106 W
 
 ![Clock Gating + One-Hot Encoding – Power Analysis](outputs/gated_clk_operand_onehot_power.png)
