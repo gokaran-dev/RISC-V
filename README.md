@@ -52,7 +52,7 @@ The modules were benchmarked using Vivado 2020.2 across four architectural varia
 ![Operand Isolation – Power Analysis](outputs/gated_operand_power.png)
 *Figure: Power analysis of the ALU with operand isolation.*
 
-### 3. Clock Gating
+### 3. Clock Gating + Operation Isolation
 - Registers and logic are updated only when `load` is asserted.
 - Clock-related power reduced by 6%.
 - Signal and DSP power decreased.
